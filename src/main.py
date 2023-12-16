@@ -39,6 +39,8 @@ openai_model = st.selectbox(
     "Select the GPT model. If you don't have access to GPT-4, select GPT-3.5-Turbo", ["GPT-3.5-Turbo", "GPT-4"])
 
 if st.checkbox("Use own Open API Key (recommended)"):
+  openai_api_base = st.text_input(
+      "Paste your api base url", value="")
   openai_api_key = st.text_input(
       "Paste your own [Open API Key](https://platform.openai.com/account/api-keys)", value="", type="password")
 
