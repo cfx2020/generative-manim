@@ -32,6 +32,7 @@ prompt = st.text_area("Write your animation idea here. Use simple words.",
                       "Draw a blue circle and convert it to a red square", max_chars=240,
                       key="prompt_input")
 
+openai_api_base = ""
 openai_api_key = ""
 
 openai_model = st.selectbox(
@@ -95,6 +96,7 @@ if generate_video:
       st.stop()
   else:
     try:
+      openai.api_base = openai_api_base
       openai.api_key = openai_api_key
     except AuthenticationError:
       st.error(
